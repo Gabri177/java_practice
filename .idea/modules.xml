@@ -5,11 +5,12 @@
       <module fileurl="file://$PROJECT_DIR$/Avaj Launcher/Avaj Launcher.iml" filepath="$PROJECT_DIR$/Avaj Launcher/Avaj Launcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/Internet_/Internet_.iml" filepath="$PROJECT_DIR$/Internet_/Internet_.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java_practice.iml" filepath="$PROJECT_DIR$/Java_practice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Structure_Algo_List/Structure_Algo_List.iml" filepath="$PROJECT_DIR$/Structure_Algo_List/Structure_Algo_List.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Structure_Algo_List/StructureAlgo.iml" filepath="$PROJECT_DIR$/Structure_Algo_List/StructureAlgo.iml" />
       <module fileurl="file://$PROJECT_DIR$/Swingy/Swingy.iml" filepath="$PROJECT_DIR$/Swingy/Swingy.iml" />
       <module fileurl="file://$PROJECT_DIR$/basic_grammer/basic_grammer.iml" filepath="$PROJECT_DIR$/basic_grammer/basic_grammer.iml" />
       <module fileurl="file://$PROJECT_DIR$/graph/graph.iml" filepath="$PROJECT_DIR$/graph/graph.iml" />
       <module fileurl="file://$PROJECT_DIR$/hello_world/hello_world.iml" filepath="$PROJECT_DIR$/hello_world/hello_world.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jdbc/jdbc.iml" filepath="$PROJECT_DIR$/jdbc/jdbc.iml" />
     </modules>
   </component>
 </project>
