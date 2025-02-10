@@ -84,6 +84,8 @@ public class JdbcConn {
     @Test
     public void  connect05() throws ClassNotFoundException, NoSuchMethodException, InstantiationException, IllegalAccessException, SQLException, IOException {
         // 通过properties对象获取配置文件信息
+        System.out.println(System.getProperty("user.dir"));
+
         Properties properties = new Properties();
         properties.load(new FileInputStream("src/mysql.properties"));
 
