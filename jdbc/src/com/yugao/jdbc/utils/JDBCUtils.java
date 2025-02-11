@@ -16,7 +16,7 @@ public class JDBCUtils {
     static {
         try {
             Properties properties = new Properties();
-            properties.load(new FileInputStream("jdbc/src/mysql.properties"));
+            properties.load(new FileInputStream("src/mysql.properties"));
             url = properties.getProperty("url");
             user = properties.getProperty("user");
             password = properties.getProperty("password");
