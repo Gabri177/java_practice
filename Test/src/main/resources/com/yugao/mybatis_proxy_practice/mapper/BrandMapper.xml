@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yugao.mybatis_proxy_practice.mapper.BrandMapper">
+
+    <select id="selectAll" resultType="Brand">
+        select * from tb_brand;
+    </select>
+    <select id="selectById" resultType="Brand">
+        select * from tb_brand where id = #{id};
+    </select>
+    <select id="selectByCondition" resultType="Brand">
+        select * from tb_brand
+        <where>
+            <if test="status != null and status != ''">
+                and   status = #{status}
+            </if>
+            <if test="companyName != null and companyName != ''">
+                and   company_name like #{companyName}
+            </if>
+            <if test="brandName != null and brandName != ''">
+                and   brand_name like #{brandName};
+            </if>
+        </where>
+    </select>
+    <select id="selectByConditionSingle" resultType="Brand">
+        select * from tb_brand
+        where
+        <choose> <!-- 相当于 switch -->
+            <when test="status != null and status != ''">
+                status = #{status}
+            </when> <!-- 相当于 switch语句中的case的用法 -->
+            <when test="companyName != null and companyName != ''">
+                company_name like #{companyName}
+            </when> <!-- 相当于 switch语句中的case的用法 -->
+            <when test="brandName != null and brandName != ''">
+                brandName like #{brandName}
+            </when> <!-- 相当于 switch语句中的case的用法 -->
+            <otherwise> <!-- 防止没有任何一个条件导致的 WHERE 结尾, 加入一个恒等式使得这种情况合法 -->
+                1 = 1 <!-- 当然 也可以直接使用 <where> 标签, 如果使用该标签, 则不需要用恒等式 -->
+            </otherwise>
+        </choose>
+    </select>
+</mapper>
