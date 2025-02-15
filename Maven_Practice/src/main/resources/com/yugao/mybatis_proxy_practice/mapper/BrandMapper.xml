@@ -14,13 +14,13 @@
         select * from tb_brand
         <where>
             <if test="status != null and status != ''">
-                and   status = #{status}
+                and status = #{status}
             </if>
             <if test="companyName != null and companyName != ''">
-                and   company_name like #{companyName}
+                and company_name like #{companyName}
             </if>
             <if test="brandName != null and brandName != ''">
-                and   brand_name like #{brandName};
+                and brand_name like #{brandName};
             </if>
         </where>
     </select>
@@ -42,4 +42,49 @@
             </otherwise>
         </choose>
     </select>
+
+    <!-- 后面这两个属性用于设置主键返回, 可以从返回的对象中获取id的值 -->
+    <insert id="add" useGeneratedKeys="true" keyProperty="id">
+        insert into tb_brand (brand_name, company_name, ordered, description, status)
+        values (#{brandName}, #{companyName}, #{ordered}, #{description}, #{status});
+    </insert>
+
+    <update id="update">
+        update tb_brand
+        <set>
+            <if test="brandName != null and brandName != ''">
+                brand_name = #{brandName},
+            </if>
+
+            <if test="companyName != null and companyName != ''">
+                company_name = #{companyName},
+            </if>
+
+            <if test="ordered != null">
+                ordered = #{ordered},
+            </if>
+
+            <if test="description != null and description != ''">
+                description = #{description},
+            </if>
+
+            <if test="status != null">
+                status = #{status}
+            </if>
+        </set>
+        where
+        id = #{id};
+    </update>
+
+    <delete id="deleteById">
+        delete from tb_brand
+        where id = #{id}
+    </delete>
+    <delete id="deleteByIds">
+        delete from tb_brand
+        where id in
+        <foreach collection="ids" item="id" separator="," open="(" close=")">
+            #{id}
+        </foreach>
+    </delete>
 </mapper>
